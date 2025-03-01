@@ -1,9 +1,3 @@
-<!-- بانر الأمن السيبراني -->
-<div style="background: url('https://source.unsplash.com/1600x400/?cybersecurity,tech') no-repeat center center/cover; padding: 50px; text-align: center; color: #fff;">
-  <h1 style="font-family: 'Courier New', Courier, monospace; text-shadow: 2px 2px 4px #000;">Welcome to My Cybersecurity Realm</h1>
-  <p style="font-size: 1.2em; text-shadow: 1px 1px 3px #000;">Defending Digital Frontiers with Knowledge and Skill</p>
-</div>
-
 <!-- روابط وسائل التواصل -->
 <div style="display: flex; gap: 10px; margin: 20px;">
   <a href="https://wa.me/+201222606319" target="_blank">
