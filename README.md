@@ -40,7 +40,16 @@
   [![My Stats](https://github-readme-stats.vercel.app/api?username=M-M-AboArab&show_icons=true&theme=dark&bg_color=00000000)](https://github.com/M-M-AboArab)
 
   ## ✍️ Random Dev Quote
-  <div id="quote-container"></div>
+  <div id="cyber-quote" style="
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 3px solid #00ff88;
+    background: rgba(0,0,0,0.3);
+    font-family: 'Courier New', monospace;
+  ">
+    <p style="color: #00ff88; margin:0">"The only secure system is one that is powered off"</p>
+    <p style="color: #00ff88; margin:0; text-align:right">- Gene Spafford</p>
+  </div>
 
 </div>
 
@@ -58,19 +67,39 @@
     background: #000 !important;
     overflow: hidden;
   }
-
-  #quote-container {
-    padding: 20px;
-    margin: 20px 0;
-    border-left: 3px solid #00ff88;
-    background: rgba(0, 0, 0, 0.3);
-    font-family: 'Courier New', monospace;
-    color: #00ff88;
-  }
 </style>
 
 <script>
-  // Matrix Rain Effect
+  // ========= نظام الاقتباسات الداخلي =========
+  const cyberQuotes = [
+    {
+      text: "Security is a process, not a product.",
+      author: "Bruce Schneier"
+    },
+    {
+      text: "Privacy is not something that I’m merely entitled to, it’s an absolute prerequisite.",
+      author: "Edward Snowden"
+    },
+    {
+      text: "The hacker mindset doesn’t actually see what’s on the screen, it sees what’s behind the screen.",
+      author: "Ryan Montgomery"
+    }
+  ];
+
+  function updateQuote() {
+    const quoteBox = document.getElementById('cyber-quote');
+    const randomQuote = cyberQuotes[Math.floor(Math.random() * cyberQuotes.length)];
+    quoteBox.innerHTML = `
+      <p style="color: #00ff88; margin:0">"${randomQuote.text}"</p>
+      <p style="color: #00ff88; margin:0; text-align:right">- ${randomQuote.author}</p>
+    `;
+  }
+
+  // تحديث الاقتباس كل 10 ثوانٍ
+  setInterval(updateQuote, 10000);
+  updateQuote(); // التحميل الأولي
+
+  // ========= Matrix Rain Effect =========
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -92,35 +121,6 @@
     });
   }
   setInterval(drawMatrix, 50);
-
-  // نظام الاقتباسات العشوائية
-  const quotes = [
-    {
-      text: "Security is a process, not a product.",
-      author: "Bruce Schneier"
-    },
-    {
-      text: "The only secure system is one that is powered off.",
-      author: "Gene Spafford"
-    },
-    {
-      text: "Privacy is not an option, and it shouldn't be the price we accept for connectivity.",
-      author: "Aral Balkan"
-    }
-  ];
-
-  function updateQuote() {
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    const quoteElement = document.getElementById('quote-container');
-    quoteElement.innerHTML = `
-      <p>"${quote.text}"</p>
-      <p><strong>— ${quote.author}</strong></p>
-    `;
-  }
-
-  // تحديث الاقتباس كل 10 ثوانٍ
-  setInterval(updateQuote, 10000);
-  updateQuote(); // التحميل الأولي
 
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth
