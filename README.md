@@ -8,10 +8,6 @@
   </a>
 </div>
 
-<!-- شارة الأمن السيبراني -->
-<div style="text-align: center; margin: 20px;">
-  ![Cyber Shield](https://img.shields.io/badge/Cybersecurity-Active-blue?style=for-the-badge&logo=shield&logoColor=white)
-</div>
 
 <!-- المحتوى الأساسي -->
 <div style="position: relative; z-index: 2; padding: 0 20px;">
