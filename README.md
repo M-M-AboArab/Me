@@ -39,18 +39,6 @@
   ## GitHub Stats
   [![My Stats](https://github-readme-stats.vercel.app/api?username=M-M-AboArab&show_icons=true&theme=dark&bg_color=00000000)](https://github.com/M-M-AboArab)
 
-  ## ✍️ Random Dev Quote
-  <div id="cyber-quote" style="
-    padding: 15px;
-    margin: 20px 0;
-    border-left: 3px solid #00ff88;
-    background: rgba(0,0,0,0.3);
-    font-family: 'Courier New', monospace;
-  ">
-    <p style="color: #00ff88; margin:0">"The only secure system is one that is powered off"</p>
-    <p style="color: #00ff88; margin:0; text-align:right">- Gene Spafford</p>
-  </div>
-
 </div>
 
 <!-- أنيميشن المصفوفة -->
@@ -60,68 +48,39 @@
     top: 0;
     left: 0;
     z-index: 1;
-    opacity: 0.3;
+    opacity: 0.15;
   }
   
   body {
     background: #000 !important;
-    overflow: hidden;
   }
 </style>
 
 <script>
-  // ========= نظام الاقتباسات الداخلي =========
-  const cyberQuotes = [
-    {
-      text: "Security is a process, not a product.",
-      author: "Bruce Schneier"
-    },
-    {
-      text: "Privacy is not something that I’m merely entitled to, it’s an absolute prerequisite.",
-      author: "Edward Snowden"
-    },
-    {
-      text: "The hacker mindset doesn’t actually see what’s on the screen, it sees what’s behind the screen.",
-      author: "Ryan Montgomery"
-    }
-  ];
-
-  function updateQuote() {
-    const quoteBox = document.getElementById('cyber-quote');
-    const randomQuote = cyberQuotes[Math.floor(Math.random() * cyberQuotes.length)];
-    quoteBox.innerHTML = `
-      <p style="color: #00ff88; margin:0">"${randomQuote.text}"</p>
-      <p style="color: #00ff88; margin:0; text-align:right">- ${randomQuote.author}</p>
-    `;
-  }
-
-  // تحديث الاقتباس كل 10 ثوانٍ
-  setInterval(updateQuote, 10000);
-  updateQuote(); // التحميل الأولي
-
-  // ========= Matrix Rain Effect =========
+  // Matrix Rain Effect
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  const chars = '01@#$%&*ABCDEFGHJKLMNPRSTUVWXYZ';
-  const drops = Array(Math.floor(canvas.width/8)).fill(0);
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+  const drops = Array(Math.floor(canvas.width/10)).fill(0);
 
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff88';
-    ctx.font = '18px monospace';
+    ctx.fillStyle = '#0F0';
+    ctx.font = '12px monospace';
 
     drops.forEach((drop, i) => {
       const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i*15, drop*15);
-      if(drop*15 > canvas.height + Math.random()*1000) drops[i] = 0;
+      ctx.fillText(text, i*10, drop*10);
+      if(drop*10 > canvas.height || Math.random() > 0.975) drops[i] = 0;
       drops[i]++;
     });
   }
   setInterval(drawMatrix, 50);
 
+  // إعادة ضبط حجم المصفوفة عند تغيير حجم النافذة
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
